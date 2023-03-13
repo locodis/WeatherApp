@@ -1,0 +1,122 @@
+/* google font poppins 300 thin kullanıyoruz*/
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+  *{
+    /* yukarda ^ import ettiğimiz (dahil ettiğimiz poppins in font unu belirtiyoruz)*/
+     font-family: 'Poppins', sans-serif; ;
+     /* reset uyguluyoruz tüm sayfa için */
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+body{
+    /* gövdemizin(sayfa) genel olarak özelliklerini verip düzenliyoruz*/
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #43affc;
+
+}
+
+.wrapper{
+    /* body içindeki wrappe = kapsayıcı- sarmalayıcı bölümünü görselleştiriyoruz yai style ekliyoruz */
+    background-color: #fff;
+    width: 400px;
+    border-radius: 7px;
+}
+.wrapper header{
+    /*wrapper class -kapsayıcı sınıfımızın içindeki başlığı düzenliyoruz */
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    padding: 16px 15px;
+    font-weight: 500;
+    font-size: 21px;
+    color: #43affc;
+    border-bottom: 1px solid #bfbfbf;
+}
+header i {
+    cursor: pointer;
+    font-size: 30px;
+    margin-right: 8px;
+
+}
+
+.wrapper .input-part {
+    /* kapsayıcı div içindeki section --- input-part class yani bilgi giriş section için düzenlemeler*/
+display: none;
+    margin: 20px 25px 30px; /* -üst -sol ve sağ    -alt     değerleri ile kullanımı*/
+
+}
+.input-part .info-txt{
+    font-size: 17px ;
+    display: none;
+    text-align: center;
+    padding: 12px 10px;
+    border-radius: 7px;
+    margin-bottom: 15px;
+}
+
+.info-txt.error{
+    display: block;
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+
+}
+
+.info-txt.pending{
+    display: block;
+    color: #0c5460;
+    background: #d1acf1;
+    border: 1px solid #bee5eb;
+}
+
+.input-part :where(input,button){
+    /* input-part class içindeki : input ve button olan bölümü birlikte düzenliyoruz
+    specifity değer 0,1,0*/
+    width: 100%;
+    height: 55px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    font-size: 18px;
+}
+
+.input-part input{
+    /*specifity 0,1,1 input ta + olmasını istediğimiz özellikler
+    */
+    border: 1px solid #bfbfbf;
+    text-align: center;
+    
+}
+.input-part input:is(:focus, :valid){
+    border: 2px solid #43affc;
+}
+.input-part .seperator{
+    height: 1px;
+    margin: 25px 0;/* üst-alt 25 ve sağ-sol 0 değerleri ile*/
+    width: 100%;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+.seperator::before{
+    content: "or";
+    padding: 0 15px;
+    font-size: 19px;
+    color: #ccc;
+    background-color:#fff ;
+    
+}
+.input-part button{
+    /* spec 0,1,1*/
+    color: #fff;
+    background-color: #43affc;
+    cursor: pointer;
+}
